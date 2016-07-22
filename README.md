@@ -27,7 +27,45 @@ This project gives compressed image result of all libraries which display in JSP
 
 1.Ubuntu
 
-2.Imagemagick installed
+2.Imagemagick 
 
 3.Tomcat server
+
+4.ANT or ECLIPSE IDE
+
+
+#Steps to run project
+
+1. Install Apache Tomcat Server in your system.
+
+2. Goto build.properties file and change the value of "home" variable to the path to your tomact
+
+
+3.Download ImageMagick using command
+     
+     sudo apt-get install imagemagick
+
+4. To build this project either install ANT using command
+
+    sudo apt-get install ant
+    
+    Otherwise can use Eclipse IDE for build process
+    
+5. Run "build.xml" file using "ant build" command if ANT is installed or simply in Eclipse as ANT Build which create .war file on tomcat webapps folder.
+
+6. Start tomcat by running "startup.sh" file which is in "bin" folder of tomcat using command
+       
+    ./startup.sh
+7. Open browser and type
+     
+     http://localhost:8080/ImageCompression/index
+
+8. Give Image URL
+
+9. Image Compression done... 
+
+    
+    
+
+
 
