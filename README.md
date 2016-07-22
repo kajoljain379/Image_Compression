@@ -40,10 +40,9 @@ This project gives compressed image result of all libraries which display in JSP
 
 2. Goto build.properties file and change the value of "home" variable to the path to your tomact
 
-
-3.Download ImageMagick using command
-     
-     sudo apt-get install imagemagick
+3. Download ImageMagick using command
+ 
+    sudo apt-get install imagemagick
 
 4. To build this project either install ANT using command
 
