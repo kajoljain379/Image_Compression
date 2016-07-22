@@ -47,7 +47,7 @@ This project gives compressed image result of all libraries which display in JSP
 
 4. To build this project either install ANT using command
 
-    sudo apt-get install ant
+     sudo apt-get install ant
     
     Otherwise can use Eclipse IDE for build process
     
@@ -55,10 +55,10 @@ This project gives compressed image result of all libraries which display in JSP
 
 6. Start tomcat by running "startup.sh" file which is in "bin" folder of tomcat using command
        
-    ./startup.sh
+      ./startup.sh
 7. Open browser and type
      
-     http://localhost:8080/ImageCompression/index
+      http://localhost:8080/ImageCompression/index
 
 8. Give Image URL
 
