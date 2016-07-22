@@ -42,7 +42,7 @@ This project gives compressed image result of all libraries which display in JSP
 
 3 Download ImageMagick using command
  
-   sudo apt-get install imagemagick
+     sudo apt-get install imagemagick
 
 4 To build this project either install ANT using command
 
