@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="ImageReview" basedir="." default="build">
+<project name="ImageCompression" basedir="." default="build">
    <property file="build.properties"/>
    <property name="src.dir" value="src"/>
    <property name="webContent.dir" value="WebContent"/>
    <property name="build.dir" value="${webContent.dir}/WEB-INF/classes"/>
-   <property name="name" value="ImageReview"/>
+   <property name="name" value="ImageCompression"/>
     <path id="master-classpath">
       <fileset dir="${webContent.dir}/WEB-INF/lib">
          <include name="*.jar"/>
