@@ -1,4 +1,4 @@
-# ImageCompressLibrary
+# Image Compression
 Compress Image to reduce bandwidth usage and compare result with different libraries. In this project different libraries are compared in terms of quality and compressed image size by giving different dimensions and quality..This project is in Java language with JSP files..
 
 The libraries which compared are:
