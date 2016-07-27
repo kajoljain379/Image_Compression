@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Image_Review" basedir="." default="build">
+   <property file="build.properties"/>
+   <property name="src.dir" value="src"/>
+   <property name="webContent.dir" value="WebContent"/>
+   <property name="build.dir" value="${webContent.dir}/WEB-INF/classes"/>
+   <property name="name" value="Image_Review"/>
+    <path id="master-classpath">
+      <fileset dir="${webContent.dir}/WEB-INF/lib">
+         <include name="*.jar"/>
+      </fileset>
+   <pathelement path="${build.dir}"/>
+   </path>
+   
+
+   <target name="usage">
+   <echo message=""/>
+   <echo message="${name} build file"/>
+   <echo message="-----------------------------------"/>
+   <echo message=""/>
+     </target>
+     
+      <target name="build" description="Compile main source tree java files">
+   <mkdir dir="${build.dir}"/>
+      <javac destdir="${build.dir}" source="1.7" target="1.7" debug="true"
+         includeantruntime ="false" deprecation="false" optimize="false" failonerror="true">
+         <src path="${src.dir}"/>
+         <classpath refid="master-classpath"/>
+      </javac>
+   </target>
+   <target name="deploy" depends="build" description="Deploy application">
+      <copy todir="${deploy.path}/${name}" 
+         preservelastmodified="true">
+         <fileset dir="${webContent.dir}">
+            <include name="**/*.*"/>
+           
+         </fileset>
+      </copy>
+   </target>
+
+
+   <target name="deploywar" depends="build" description="Deploy application as a WAR file">
+      <war destfile="${name}.war" webxml="${webContent.dir}/WEB-INF/web.xml">
+         <fileset dir="${webContent.dir}">
+            <include name="**/*.*"/>
+         </fileset>
+      </war>
+      
+      <copy todir="${deploy.path}" preservelastmodified="true">
+         <fileset dir=".">
+            <include name="*.war"/>
+         </fileset>
+      </copy>
+   </target>
+    
+
+   <target name="clean" description="Clean output directories">
+      <delete>
+         <fileset dir="${build.dir}">
+            <include name="**/*.class"/>
+         </fileset>
+      </delete>
+   </target>
+<!-- ============================================================ -->
+<!-- Tomcat tasks -->
+<!-- ============================================================ -->
+
+<path id="catalina-ant-classpath">
+<!-- We need the Catalina jars for Tomcat -->
+<!--  * for other app servers - check the docs -->
+   <fileset dir="${appserver.lib}">
+      <include name="catalina-ant.jar"/>
+   </fileset>
+</path>
+
+<taskdef name="install" classname="org.apache.catalina.ant.DeployTask">
+   <classpath refid="catalina-ant-classpath"/>
+</taskdef>
+<taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask">
+   <classpath refid="catalina-ant-classpath"/>
+</taskdef>
+<taskdef name="list" classname="org.apache.catalina.ant.ListTask">
+   <classpath refid="catalina-ant-classpath"/>
+</taskdef>
+<taskdef name="start" classname="org.apache.catalina.ant.StartTask">
+   <classpath refid="catalina-ant-classpath"/>
+</taskdef>
+<taskdef name="stop" classname="org.apache.catalina.ant.StopTask">
+   <classpath refid="catalina-ant-classpath"/>
+</taskdef>
+
+<target name="reload" description="Reload application in Tomcat">
+</target>
+</project>
