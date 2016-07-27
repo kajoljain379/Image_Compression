@@ -50,14 +50,14 @@ This project gives compressed image result of all libraries which display in JSP
     
     Otherwise can use Eclipse IDE for build process
     
-5 Run "build.xml" file using "ant build" command if ANT is installed or simply in Eclipse as ANT Build which create .war file on tomcat webapps folder.
+5 Run "build.xml" file using "ant build" and then run command "ant deploywar" command if ANT is installed or simply in Eclipse as ANT Build which create .war file on tomcat webapps folder.
 
 6 Start tomcat by running "startup.sh" file which is in "bin" folder of tomcat using command
        
       ./startup.sh
 7 Open browser and type
      
-      http://localhost:8080/ImageCompression/index
+      http://localhost:8080/Image_Review/index
 
 8 Give Image URL
 
